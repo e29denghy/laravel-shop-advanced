@@ -123,8 +123,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
-    'api_domain' => env('API_DOMAIN', 'apis.denghy.cn'),
-    'admin_domain' => env('ADMIN_DOMAIN', 'idc.denghy.cn'),
+    //'api_domain' => env('API_DOMAIN', 'apis.denghy.cn'),
+    //'admin_domain' => env('ADMIN_DOMAIN', 'idc.denghy.cn'),
 
     /*
     |--------------------------------------------------------------------------
