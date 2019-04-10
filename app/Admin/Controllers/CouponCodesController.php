@@ -23,7 +23,7 @@ class CouponCodesController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('优惠券列表')
+            ->header('API服务列表')
             ->body($this->grid());
     }
 
@@ -37,7 +37,7 @@ class CouponCodesController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('编辑优惠券')
+            ->header('编辑API服务')
             ->body($this->form()->edit($id));
     }
 
@@ -50,7 +50,7 @@ class CouponCodesController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('新增优惠券')
+            ->header('新增API服务')
             ->body($this->form());
     }
 
@@ -66,7 +66,7 @@ class CouponCodesController extends Controller
         $grid->model()->orderBy('created_at', 'desc');
         $grid->id('ID')->sortable();
         $grid->name('名称');
-        $grid->code('优惠码');
+        $grid->code('API编号');
         $grid->description('描述');
         $grid->column('usage', '用量')->display(function ($value) {
             return "{$this->used} / {$this->total}";
@@ -93,7 +93,7 @@ class CouponCodesController extends Controller
 
         $form->display('id', 'ID');
         $form->text('name', '名称')->rules('required');
-        $form->text('code', '优惠码')->rules(function($form) {
+        $form->text('code', 'API编号')->rules(function($form) {
             // 如果 $form->model()->id 不为空，代表是编辑操作
             if ($id = $form->model()->id) {
                 return 'nullable|unique:coupon_codes,code,'.$id.',id';
