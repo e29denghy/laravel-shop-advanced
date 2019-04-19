@@ -42,17 +42,17 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            // 'read' => [
-            //     'host' => env('DB_HOST_READ', '127.0.0.1'),
-            //     'username' => env('DB_USERNAME_READ', 'forge'),
-            //     'password' => env('DB_PASSWORD_READ', ''),
-            // ],
-            // 'write' => [
-            //     'host' => env('DB_HOST_WRITE', '127.0.0.1'),
-            //     'username' => env('DB_USERNAME_WRITE', 'forge'),
-            //     'password' => env('DB_PASSWORD_WRITE', ''),
-            // ],
+            //'host' => env('DB_HOST', '127.0.0.1'),
+            'read' => [
+                'host' => env('DB_HOST_READ', '127.0.0.1'),
+                'username' => env('DB_USERNAME_READ', 'forge'),
+                'password' => env('DB_PASSWORD_READ', ''),
+            ],
+            'write' => [
+                'host' => env('DB_HOST_WRITE', '127.0.0.1'),
+                'username' => env('DB_USERNAME_WRITE', 'forge'),
+                'password' => env('DB_PASSWORD_WRITE', ''),
+            ],
             'sticky'    => true,
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
