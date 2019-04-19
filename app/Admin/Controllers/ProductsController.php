@@ -102,6 +102,9 @@ class ProductsController extends Controller
         // 创建一个选择图片的框
         $form->image('image', '封面图片')->rules('required|image');
 
+        // 创建一个上传目录
+        $form->multipleFile('dir', '封面图片')->rules('mimes:doc,docx,xlsx');
+
         // 创建一个富文本编辑器
         $form->editor('description', '产品描述')->rules('required');
 
